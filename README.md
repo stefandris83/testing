@@ -5,11 +5,16 @@ Stand: 9.11.2026
 
 | Datei | Zweck | SHA-256 (Anfang) |
 |---|---|---|
-| `lav-ingest.zip` | Skill des Agenten **LAV Ingest** (Studien aufnehmen, Pakete prüfen) | `0f0c25f4` |
+| `lav-ingest.zip` | Skill des Agenten **LAV Ingest** (Studien aufnehmen, Library-Paket bauen und prüfen) | `b0c46157` |
 | `mehrstudientest/lav-learning-library_3-studien_v1.1.zip` | Skill des Agenten **LAV Learning Library** mit den drei öffentlichen Teststudien LAV-T01 bis LAV-T03, Version 1.1 | `bfca37c7` |
 | `mehrstudientest/golden-set-mehrstudientest.csv` | Testfragen G01–G15 mit Sollantworten. Enthält Kontrollwörter: **nie in einen Agenten hochladen** | `ebde1bc7` |
 | `library-vorlage_v1.1.zip` | Baukasten für das Library-Paket mit echten Studien (SKILL.md, Prüfskripte, Vorlagen für Katalog und Cards) | `1f47aac5` |
 | `LAV_Learning_Library_Uebergabe_v3.1.zip` | Blaupause v3.1, Anleitung, Plattformtest, Referenztranskripte (wird durch v3.2 ersetzt) | `3350c6d7` |
+
+## Neu in lav-ingest.zip: Befehl «Paket bauen»
+- Baut aus den Ingest-ZIPs (und optional dem bestehenden Library-Paket) das fertige, geprüfte `lav-learning-library.zip`.
+- Ersetzt Studien gleicher ID, trägt Ausgaben derselben Reihe gegenseitig unter «Nicht verwechseln mit» ein, ersetzt doppelte Kontrollwörter, verteilt Katalog und Cards bei Bedarf auf mehrere Dateien.
+- Freigabe durch Research per Befehl («Freigabe LAV-NN durch <Name>»); ohne Freigabe nur Testpaket.
 
 ## Neu in Version 1.1 der Library-Skill
 - Antwortregeln: falsche Annahmen zuerst richtigstellen; keine Ursache-Aussagen ohne Beleg; zu jeder Zahl Gruppe, Basis, Jahr und Art des Werts; Veränderungen in Prozentpunkten, Selbstgerechnetes als «berechnet»; Methodenhinweis bei Vergleichen.
