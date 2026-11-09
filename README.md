@@ -5,7 +5,7 @@ Stand: 9.11.2026
 
 | Datei | Zweck | SHA-256 (Anfang) |
 |---|---|---|
-| `lav-ingest.zip` | Skill des Agenten **LAV Ingest** (Studien aufnehmen, Library-Paket bauen und prüfen) | `08fb65d6` |
+| `lav-ingest.zip` | Skill des Agenten **LAV Ingest** (Studien aufnehmen, Library-Paket bauen und prüfen) | `4f94d9de` |
 | `mehrstudientest/lav-learning-library_3-studien_v1.1.zip` | Skill des Agenten **LAV Learning Library** mit den drei öffentlichen Teststudien LAV-T01 bis LAV-T03, Version 1.1 | `bfca37c7` |
 | `mehrstudientest/golden-set-mehrstudientest.csv` | Testfragen G01–G15 mit Sollantworten. Enthält Kontrollwörter: **nie in einen Agenten hochladen** | `ebde1bc7` |
 | `library-vorlage_v1.1.zip` | Baukasten für das Library-Paket mit echten Studien (SKILL.md, Prüfskripte, Vorlagen für Katalog und Cards) | `1f47aac5` |
