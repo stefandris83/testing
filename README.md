@@ -10,6 +10,7 @@ Stand: 9.11.2026
 | `mehrstudientest/golden-set-mehrstudientest.csv` | Testfragen G01–G15 mit Sollantworten. Enthält Kontrollwörter: **nie in einen Agenten hochladen** | `ebde1bc7` |
 | `library-vorlage_v1.1.zip` | Baukasten für das Library-Paket mit echten Studien (SKILL.md, Prüfskripte, Vorlagen für Katalog und Cards) | `1f47aac5` |
 | `LAV_Learning_Library_Uebergabe_v3.1.zip` | Blaupause v3.1, Anleitung, Plattformtest, Referenztranskripte (wird durch v3.2 ersetzt) | `3350c6d7` |
+| `upload-test/LAV-T01_ingest.zip` … `LAV-T03_ingest.zip` | Ingest-Ergebnisse der drei öffentlichen Teststudien (Test «Paket bauen»). Enthalten kontrollwoerter.csv: nur in LAV Ingest hochladen, nie in den Library-Agenten | `8371ae78` · `f80cf72f` · `c24b41a9` |
 
 ## Neu in lav-ingest.zip: Befehl «Paket bauen»
 - Baut aus den Ingest-ZIPs (und optional dem bestehenden Library-Paket) das fertige, geprüfte `lav-learning-library.zip`.
