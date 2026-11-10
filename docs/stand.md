@@ -15,8 +15,8 @@ GitHub Copilot weiterentwickelt; dieses Repository ist die einzige Quelle.
 
 | Agent | Status | Skill im Tenant |
 |---|---|---|
-| LAV Ingest | aktiv, nur Pflegeteam | Stand 10.11.2026 vormittags (4f94d9de oder neuer); ersetzen durch `dist/lav-ingest.zip` |
-| LAV Learning Library | aktiv, nicht veröffentlicht/geteilt | Testpaket T01–T03 aus «Paket bauen» vom 10.11.2026 (Library-Skill v1.1, Cards nicht freigegeben) |
+| LAV Ingest | aktiv, nur Pflegeteam | `dist/lav-ingest.zip` vom 10.11.2026 (ersetzt am Nachmittag) |
+| LAV Learning Library | Status «Published» (10.11.2026); nicht mit Nutzern teilen, solange nur Testpaket | Testpaket T01–T03 aus «Paket bauen» vom 10.11.2026 mit aktueller Ingest-Skill (Cards nicht freigegeben) |
 | LAV Plattformtest | nicht mehr nötig, löschen | – |
 
 ## Versionen im Repository
@@ -39,17 +39,23 @@ aus; belege.py erbt Belege auch aus dem Absatz nach einer Tabelle; paket_bauen.p
 
 ## Offene Schritte (Reihenfolge)
 
-1. **Nutzer, im Tenant:** Ingest-Skill durch `dist/lav-ingest.zip` ersetzen → neues Gespräch, drei ZIPs aus
-   `testdaten/ingest/` anhängen, `Paket bauen` → im Library-Agenten Skill ersetzen, neues Gespräch,
-   `Wartung lav-learning-library: Paket selbst prüfen` (Kurzform testen; erwartet «Keine Befunde.»).
-2. **Simulierte Fragensammlung** (rund 40 Fragen, nur Entwicklung): [testfragen.prompt.md](../.github/prompts/testfragen.prompt.md).
-3. **PowerPoint-Studie** (> 100 Seiten, aus PowerPoint exportiert) als Prüffall: öffentlich → sofort; intern → erst
-   nach G1 und nur im Tenant.
-4. **Testpaket für Skill-Grenzen** (9 Mini-Skills, 400 Dateien, 4 Ordnerebenen) bauen und im Tenant messen.
-5. **Gate G1**; danach 3–5 echte Studien (Spike): Zeit, Credits, Ablesefehlerquote messen.
-6. **Abnahme** vor dem Rollout (siehe qualitaet.md): echte Fragen blind erheben, Sollantworten durch Research,
+1. **Nutzer, im Tenant:** Beide Skills sind ersetzt (10.11.2026, Paket mit T01–T03). Noch offen: im Library-Agenten
+   neues Gespräch, `Wartung lav-learning-library: Paket selbst prüfen` (Kurzform; erwartet «Keine Befunde.»).
+2. **Evaluate-Probelauf:** `testdaten/golden-set/evaluate_golden-set-mehrstudientest.csv` (G01–G15 ohne G11) im
+   Library-Agenten importieren; festhalten, welche Testmethoden angeboten werden, Credits pro Lauf, Export (CSV) →
+   auswerten (`belege_lokal.py`, Raster). Ergebnis in plattform.md.
+3. **«Fortsetzen» gegen die ZIP-Sperre absichern** (Skript sucht das Zwischen-ZIP selbst, wie `--uploads`), bevor eine
+   Studie mit über 100 Seiten startet – sie braucht fast sicher Unterbrüche.
+4. **PowerPoint-Studie** (> 100 Seiten) als Prüffall: öffentlich → sofort nach Schritt 3; intern → erst nach
+   schriftlichem G1 und nur im Tenant (eine Kollegin hat am 10.11.2026 eine interne Studie bereitgestellt: wartet auf G1).
+5. **Simulierte Fragensammlung** (rund 40 Fragen, nur Entwicklung): [testfragen.prompt.md](../.github/prompts/testfragen.prompt.md);
+   danach als Evaluate-Testsatz.
+6. **Testpaket für Skill-Grenzen** (9 Mini-Skills, 400 Dateien, 4 Ordnerebenen) bauen und im Tenant messen.
+7. **Gate G1** (schriftlich: Dateneigner und InfoSec) – jetzt beantragen; danach 3–5 echte Studien (Spike): Zeit,
+   Credits, Ablesefehlerquote messen.
+8. **Abnahme** vor dem Rollout (siehe qualitaet.md): echte Fragen blind erheben, Sollantworten durch Research,
    Bewertungsraster, Doppelbewertung, Schwellen vorab.
-7. **Pilot** mit monatlichem Export der Transkripte.
+9. **Pilot** mit monatlichem Export der Transkripte.
 
 ## Bekannte Risiken und offene technische Punkte
 

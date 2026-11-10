@@ -18,6 +18,7 @@ Nur **öffentliche** Teststudien. Nie Inhalte interner Studien hier ablegen (sie
 | `referenz/LAV-T01`, `referenz/LAV-T02` | Referenztranskripte von Claude (eine Datei je Seite, geprüft), mit Prüfprotokoll und begründeten Befunden | `tests/test_ingest_skripte.py`, Vergleich mit Ingest-Ergebnissen (`tools/grafikvergleich.py`) |
 | `golden-set/golden-set-mehrstudientest.csv` | Testfragen G01–G15 mit Sollantworten | Golden-Set-Runden, Auswertung |
 | `golden-set/golden-set-beispiel_LAV-T01-T02.csv` | 12 Beispielfragen der Blaupause v3.1 | Hintergrund |
+| `golden-set/evaluate_golden-set-mehrstudientest.csv` | G01–G15 ohne G11 im Format für «Evaluate» (`Question,Expected response`), erzeugt mit `tools/evaluate_csv.py` | Import im Library-Agenten |
 | `pdf/` | die drei PDFs – **nicht im Repository**, holen mit `python tools/pdfs_holen.py` | Teil B der Ingest-Tests, Nachprüfen an der PDF |
 
 ## Achtung Kontrollwörter

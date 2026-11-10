@@ -50,8 +50,8 @@ Anleitungen mit exakten Eingaben und wertest seine Rückmeldungen aus.
 | `src/lav-ingest/` | Ingest-Skill: `SKILL.md`, `scripts/*.py`, `references/` (Regeln, Vorlagen, `skripte.md`), `assets/library-SKILL.md` |
 | `src/lav-learning-library/` | Library-Skill: `SKILL.md` (Vorlage), `scripts/paket.py`, `scripts/belege.py` |
 | `dist/` | `lav-ingest.zip` (hochladen in Copilot Studio), `PRUEFSUMMEN.txt` – nur über `tools/build.py` erzeugen |
-| `tools/` | `build.py` (abgleichen, testen, bauen), `belege_lokal.py`, `pdfs_holen.py`, `grafikvergleich.py` |
-| `tests/` | `test_paket_bauen.py`, `test_belege.py`, `test_ingest_skripte.py`, `fixtures/` |
+| `tools/` | `build.py` (abgleichen, testen, bauen), `belege_lokal.py`, `evaluate_csv.py`, `pdfs_holen.py`, `grafikvergleich.py` |
+| `tests/` | `test_paket_bauen.py`, `test_belege.py`, `test_ingest_skripte.py`, `test_evaluate_csv.py`, `fixtures/` |
 | `testdaten/` | Ingest-ZIPs, Pakete, Referenztranskripte, Golden Sets der Teststudien; `pdf/` lokal (gitignored) |
 | `docs/` | Wissensstand – siehe unten |
 | `archiv/` | überholte Übergabe v3.1 |
@@ -64,6 +64,7 @@ python tools/build.py --nur-tests  # nur abgleichen und testen
 python tools/build.py --pruefen    # nichts schreiben, nur prüfen (wie GitHub Actions)
 python tools/pdfs_holen.py         # öffentliche Test-PDFs nach testdaten/pdf/ (für Teil B der Ingest-Tests)
 python tools/belege_lokal.py <antworten.csv>   # «Belege prüfen» lokal, nur Teststudien
+python tools/evaluate_csv.py [<golden-set.csv>] # Testsatz für «Evaluate» in Copilot Studio (ohne Kontrollwörter)
 ```
 Python 3.10 oder neuer; für die Tests keine Zusatzpakete (Teil B der Ingest-Tests braucht `pdfplumber` und die PDFs,
 sonst wird er übersprungen). Fehlt Python: Änderungen trotzdem machen, dem Menschen sagen, dass Tests und Build offen

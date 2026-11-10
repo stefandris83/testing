@@ -40,6 +40,8 @@ unvollständig). **Sollantworten für die Abnahme schreibt Research aus der PDF*
 ## Ablauf einer Golden-Set-Runde
 
 1. Library-Agent mit dem zu prüfenden Paket; je Frage ein neues Gespräch (sonst liest der Agent aus dem Verlauf).
+   Automatisch: Testsatz mit `python tools/evaluate_csv.py` erzeugen und im Reiter «Evaluate» importieren (jede Frage
+   läuft einzeln); Ergebnisse als CSV exportieren. Lesebeweis (G11) bleibt manuell.
 2. Antworten wörtlich in die Spalte `Antwort Agent` kopieren (Rückfragen des Agenten und die Antwort darauf mit).
 3. Zahlen prüfen: im Agenten «Wartung lav-learning-library: Belege prüfen» (bereinigte CSV) oder lokal
    `python tools/belege_lokal.py <csv>` (nur Teststudien). Erwartung: «nicht gefunden: 0».

@@ -4,7 +4,8 @@ Alle Tests mit Datum und Ergebnis, neueste zuoberst. Neue Einträge oben anfüge
 (LAV-T01–T03) mit Inhalt; bei internen Studien nur IDs und Kennzahlen (Anzahl Fragen, bestanden, Befunde).
 
 ## 10.11.2026 – Lokale Testsuite im Repository
-`python tools/build.py`: alle Tests bestanden.
+`python tools/build.py`: alle Tests bestanden (GitHub Actions ebenfalls, inkl. Teil B mit den Original-PDFs).
+- `test_evaluate_csv.py` (5 Prüfungen): Evaluate-Format, G11 ohne Kontrollwörter weggelassen.
 - `test_belege.py` (10 Prüfungen): Basis M6 123 Zahlen 0 nicht gefunden; eingebaute Fehler erkannt (19→15, 7’783→7’738,
   52’916→25’916, 30→33, falsche Seite, fehlender Beleg, Tabelle mit Beleg danach 9’021→9’201); Grenze «berechnet» markiert.
 - `test_ingest_skripte.py` (19 Prüfungen, Regressionstest Blaupause 10.5): aufteilen.py, paket.py mit 5 Manipulationen,

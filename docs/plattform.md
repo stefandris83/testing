@@ -53,8 +53,16 @@ Hintergrund und Quellen vom 14.10.2026: [hintergrund/blaupause-v3.1.md](hintergr
 
 ## Testen und Auswerten in Copilot Studio
 
-- **Evaluate** bietet für Harness-Agenten nur «General quality», keinen Vergleich mit Sollantworten → Golden Set
-  manuell bzw. per CSV auswerten (`belege.py`, Bewertungsraster in qualitaet.md).
+- **Evaluate** (Reiter oben im Agenten): Testsatz erzeugen («Generate»), importieren («Import», CSV bis 5 MB) oder
+  von Hand schreiben; Typ «Single responses» oder «Conversations»; «Uses Copilot Credits» (Screenshot 10.11.2026,
+  Agent LAV Learning Library).
+  - Laut Microsoft-Doku (Standard-Harness): Kopfzeile `Question,Expected response`, höchstens 100 Fragen, je Frage
+    höchstens 1’000 Zeichen; Methoden General quality, Compare meaning, Text similarity, Exact match, Keyword match,
+    Tool use, Custom; Ergebnisse 89 Tage gespeichert, Export als CSV. Erzeugen: `python tools/evaluate_csv.py`.
+  - Früher beobachtet: für Harness-Agenten nur «General quality» (kein Vergleich mit Sollantworten). **Offen:** welche
+    Methoden der Harness-Agent heute nach dem Import anbietet, Credits pro Lauf, Inhalt des Exports.
+  - Auch mit Vergleichsmethode bleibt die Belegprüfung (`belege.py`) und das Raster in qualitaet.md massgeblich:
+    Bewertung «nach Bedeutung» durch ein Sprachmodell erkennt eine vertauschte Zahl nicht zuverlässig.
 - Transkripte der Gespräche lassen sich 29 Tage lang herunterladen (für den Pilot monatlich exportieren).
 - Debug-Modus im Testbereich zeigt Skill-Aufrufe und Credits.
 
