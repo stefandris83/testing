@@ -3,9 +3,11 @@
 Nur öffentliche Testdaten und Skills. Keine internen Studien (Regel G5).
 Stand: 9.11.2026
 
+**Bedienung:** siehe [BEDIENKARTE.md](BEDIENKARTE.md) – genaue Eingaben für beide Agenten.
+
 | Datei | Zweck | SHA-256 (Anfang) |
 |---|---|---|
-| `lav-ingest.zip` | Skill des Agenten **LAV Ingest** (Studien aufnehmen, Library-Paket bauen und prüfen) | `33434adc` |
+| `lav-ingest.zip` | Skill des Agenten **LAV Ingest** (Studien aufnehmen, Library-Paket bauen und prüfen) | `bbd7b51a` |
 | `mehrstudientest/lav-learning-library_3-studien_v1.1.zip` | Skill des Agenten **LAV Learning Library** mit den drei öffentlichen Teststudien LAV-T01 bis LAV-T03, Version 1.1 | `bfca37c7` |
 | `mehrstudientest/golden-set-mehrstudientest.csv` | Testfragen G01–G15 mit Sollantworten. Enthält Kontrollwörter: **nie in einen Agenten hochladen** | `ebde1bc7` |
 | `library-vorlage_v1.1.zip` | Baukasten für das Library-Paket mit echten Studien (SKILL.md, Prüfskripte, Vorlagen für Katalog und Cards) | `1f47aac5` |
