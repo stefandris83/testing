@@ -1,0 +1,3 @@
+lav-ingest.zip  SHA-256 3c7628d455410a90c25d97e68577d75f961f9cbb416de38c0089ac3717d46874
+Kurzform (erste 8 Zeichen, wie im README): 3c7628d4
+Dateien im ZIP: 12

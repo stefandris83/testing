@@ -1,0 +1,3 @@
+Seite;Meldung;Begründung
+6;fehlende Zahl 97;Erste Achsenbeschriftung «97»; die Zeitreihe beginnt mit dem ersten Datenpunkt 1998 (gleitender 3-Jahres-Mittelwert). Am Seitenbild geprüft.
+13;fehlende Zahlen 9, 7;Überlappende Endbeschriftungen in der Textebene; Werte am Seitenbild geprüft.

@@ -1,0 +1,15 @@
+Referenztranskripte LAV Learning Library (öffentliche Teststudien, Abdruck mit Quellenangabe erwünscht)
+
+LAV-T01  Gesundheitsmonitor 2024 – Das Wichtigste in Kürze (gfs.bern / Interpharma), 19 PDF-Seiten
+LAV-T02  Gesundheitsmonitor 2025 – Das Wichtigste in Kürze (gfs.bern / Interpharma), 27 PDF-Seiten
+
+Je Studie: seiten/s001.md … (eine Datei je PDF-Seite, Format wie die Ausgabe des Ingest-Agenten),
+pruefprotokoll.txt (Ergebnis von pruefen.py), befunde-begruendet.txt (Begründung der verbleibenden Meldungen).
+
+Zweck: Massstab im Spike. Die Ausgabe des Ingest-Agenten für dieselbe PDF wird Seite für Seite damit verglichen.
+Unbeschriftete Grafikwerte sind hier aus der Vektorgrafik berechnet («berechnet», ± 1 Prozentpunkt bzw. ± 0.1);
+der Ingest-Agent liest sie am Seitenbild ab («ca.»). Abweichungen bis 3 Prozentpunkte gelten als Ablesegenauigkeit.
+
+Quellen der PDFs:
+https://www.interpharma.ch/wp-content/uploads/2024/06/LY-IPH.01.24.001-–-Gesundheitsmonitor-2024_d_web.pdf
+https://www.interpharma.ch/wp-content/uploads/2025/06/LY-IPH.01.25.001-–-Gesundheitsmonitor-2025_d_250605_def.pdf

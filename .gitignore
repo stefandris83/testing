@@ -1,0 +1,20 @@
+# Öffentliche Test-PDFs: lokal mit `python tools/pdfs_holen.py` holen, nie committen (Rechte der Herausgeber)
+testdaten/pdf/
+# Arbeitsordner und Ausgaben lokaler Läufe
+arbeit/
+ausgabe/
+belegpruefung.csv
+*.tmp
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+# Betriebssystem und Editor
+.DS_Store
+Thumbs.db
+*.code-workspace
+# Nie ins Repository: echte Inhalte interner Studien (Sicherheitsnetz, ersetzt nicht die Regel)
+intern/
+**/intern/
+*.intern.*

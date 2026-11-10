@@ -1,0 +1,6 @@
+Seite;Meldung;Begründung
+13;fehlende Zahlen 0, 4, 3;Endbeschriftungen der Linien überlappen in der Textebene («9 9 1 0», «4 4 9 3»); alle Werte am Seitenbild geprüft und im Grafikblock vorhanden.
+14;fehlende Zahlen 80, 0, 9;Kleine Segmentbeschriftungen über den Säulen überlappen mit der Achse; Werte am Seitenbild geprüft.
+15;fehlende Zahlen 3, 7, 0, 2, 9;Beschriftungen 2025 überlappen in der Textebene («3 3 . . 7 6» = 3.7 / 3.6); Werte am Seitenbild geprüft.
+21;fehlende Zahlen 6, 5;Endbeschriftungen 66 / 51 überlappen in der Textebene («6 5 6 1»); Werte am Seitenbild geprüft.
+26;keine Textebene;Leere Doppelseite (Druckseiten 48–49), im Transkript vermerkt.

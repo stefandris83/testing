@@ -1,24 +1,52 @@
-# LAV Learning Library – Testdateien
+# LAV Learning Library – Skills, Werkzeuge und Wissensstand
 
-Nur öffentliche Testdaten und Skills. Keine internen Studien (Regel G5).
-Stand: 9.11.2026
+Arbeitsrepository für die **LAV Learning Library** der Helsana: zwei Agenten in Microsoft Copilot Studio
+(GitHub Copilot Harness). **LAV Ingest** transkribiert Studien-PDFs vollständig und baut das Skill-Paket;
+**LAV Learning Library** beantwortet Fragen nur aus den Studien, mit Seitenbeleg.
 
-**Bedienung:** siehe [BEDIENKARTE.md](BEDIENKARTE.md) – genaue Eingaben für beide Agenten.
+> **Öffentliches Repository.** Hier liegen nur Skills, Werkzeuge, Dokumentation und drei öffentliche Teststudien.
+> Inhalte interner Studien gehören nie hierher und nie in den Copilot-Chat – nur IDs (LAV-NN) und Prüfkennzahlen.
+> Details: [docs/sicherheit.md](docs/sicherheit.md).
 
-| Datei | Zweck | SHA-256 (Anfang) |
-|---|---|---|
-| `lav-ingest.zip` | Skill des Agenten **LAV Ingest** (Studien aufnehmen, Library-Paket bauen und prüfen) | `bbd7b51a` |
-| `mehrstudientest/lav-learning-library_3-studien_v1.1.zip` | Skill des Agenten **LAV Learning Library** mit den drei öffentlichen Teststudien LAV-T01 bis LAV-T03, Version 1.1 | `bfca37c7` |
-| `mehrstudientest/golden-set-mehrstudientest.csv` | Testfragen G01–G15 mit Sollantworten. Enthält Kontrollwörter: **nie in einen Agenten hochladen** | `ebde1bc7` |
-| `library-vorlage_v1.1.zip` | Baukasten für das Library-Paket mit echten Studien (SKILL.md, Prüfskripte, Vorlagen für Katalog und Cards) | `1f47aac5` |
-| `LAV_Learning_Library_Uebergabe_v3.1.zip` | Blaupause v3.1, Anleitung, Plattformtest, Referenztranskripte (wird durch v3.2 ersetzt) | `3350c6d7` |
-| `upload-test/LAV-T01_ingest.zip` … `LAV-T03_ingest.zip` | Ingest-Ergebnisse der drei öffentlichen Teststudien (Test «Paket bauen»). Enthalten kontrollwoerter.csv: nur in LAV Ingest hochladen, nie in den Library-Agenten | `8371ae78` · `f80cf72f` · `c24b41a9` |
+## Schnellstart in VS Code mit GitHub Copilot
 
-## Neu in lav-ingest.zip: Befehl «Paket bauen»
-- Baut aus den Ingest-ZIPs (und optional dem bestehenden Library-Paket) das fertige, geprüfte `lav-learning-library.zip`.
-- Ersetzt Studien gleicher ID, trägt Ausgaben derselben Reihe gegenseitig unter «Nicht verwechseln mit» ein, ersetzt doppelte Kontrollwörter, verteilt Katalog und Cards bei Bedarf auf mehrere Dateien.
-- Freigabe durch Research per Befehl («Freigabe LAV-NN durch <Name>»); ohne Freigabe nur Testpaket.
+1. Repository holen: in VS Code `Ctrl+Shift+P` → **Git: Clone** → `https://github.com/stefandris83/testing` → Ordner
+   wählen → öffnen. (Ohne Git: auf GitHub **Code → Download ZIP**, entpacken, Ordner in VS Code öffnen.)
+2. Copilot-Chat öffnen, **Agent**-Modus wählen, Modell wählen (z. B. Claude Opus).
+   Die Anweisungen in `.github/copilot-instructions.md` lädt Copilot automatisch.
+3. Erste Nachricht, z. B.: `Lies docs/stand.md und sag mir kurz, was als Nächstes ansteht.`
+4. Optional im Terminal: `python tools/build.py` – führt alle Tests aus und baut `dist/lav-ingest.zip`
+   (Python 3.10+; für Teil B der Ingest-Tests zusätzlich `pip install pdfplumber` und `python tools/pdfs_holen.py`).
 
-## Neu in Version 1.1 der Library-Skill
-- Antwortregeln: falsche Annahmen zuerst richtigstellen; keine Ursache-Aussagen ohne Beleg; zu jeder Zahl Gruppe, Basis, Jahr und Art des Werts; Veränderungen in Prozentpunkten, Selbstgerechnetes als «berechnet»; Methodenhinweis bei Vergleichen.
-- Wartungsbefehle für das Pflegeteam: «Paket selbst prüfen» (prüft das geladene Paket, ohne Upload) und «Belege prüfen» (jede Zahl einer Antwort gegen die zitierte Seite).
+Typische Aufträge im Chat:
+
+| Du willst … | Eingabe im Chat |
+|---|---|
+| ein Ergebnis aus Copilot Studio auswerten | Screenshot/CSV anhängen und `/auswerten` (oder «Werte das aus») |
+| eine Skill ändern und ausliefern | Änderung beschreiben, danach `/release` |
+| den Projektstand festhalten (Ende der Sitzung) | `/stand` |
+| Testfragen zu den Teststudien erstellen | `/testfragen 40 Fragen, gemischt` |
+
+Gibt es die Slash-Befehle nicht (je nach Copilot-Version), funktioniert «Folge .github/prompts/auswerten.prompt.md».
+
+## Was wo liegt
+
+| Ordner | Inhalt |
+|---|---|
+| [`dist/`](dist/) | **`lav-ingest.zip`** – diese Datei im Agenten LAV Ingest als Skill hochladen; Prüfsumme in `PRUEFSUMMEN.txt` |
+| [`src/`](src/) | Quellen der beiden Skills (`lav-ingest/`, `lav-learning-library/`) |
+| [`docs/`](docs/) | Wissensstand: [Stand](docs/stand.md) · [Architektur](docs/architektur.md) · [Plattform](docs/plattform.md) · [Qualität](docs/qualitaet.md) · [Entscheide](docs/entscheide.md) · [Testprotokoll](docs/testprotokoll.md) · [Sicherheit](docs/sicherheit.md) · [Bedienkarte](docs/bedienkarte.md) |
+| [`testdaten/`](testdaten/) | Teststudien LAV-T01–T03: Ingest-ZIPs, Pakete, Referenztranskripte, Golden Sets |
+| [`tests/`](tests/), [`tools/`](tools/) | automatische Tests; Build und Hilfswerkzeuge |
+| [`.github/`](.github/) | Anweisungen und Abläufe für Copilot; Tests bei jedem Push (GitHub Actions) |
+| [`archiv/`](archiv/) | überholte Übergabe v3.1 |
+
+## Bedienung im Tenant
+
+Die genauen Eingaben für beide Agenten stehen in der **[Bedienkarte](docs/bedienkarte.md)**. Kurz:
+- LAV Ingest: `Studie aufnehmen: LAV-NN, <Kurztitel>, <Jahr>` (PDF anhängen) · `Paket bauen` (Ingest-ZIPs und
+  bisheriges Paket anhängen).
+- LAV Learning Library, nach dem Ersetzen der Skill im neuen Gespräch:
+  `Wartung lav-learning-library: Paket selbst prüfen`.
+
+Dateien mit Kontrollwörtern (`kontrollwoerter*.csv`, Golden-Set-Dateien) nie in einen Agenten hochladen.

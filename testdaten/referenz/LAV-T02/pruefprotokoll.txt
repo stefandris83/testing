@@ -1,0 +1,11 @@
+Prüfprotokoll · PDF: /home/claude/lav/pdf/gesundheitsmonitor-2025.pdf (27 Seiten) · Transkript: ref/LAV-T02/seiten
+Seiten im Transkript: 27 von 27
+Seiten mit Befunden: 5 (13, 14, 15, 21, 26)
+Wortabdeckung: Minimum 96.6%, Mittel 99.4%
+Schwelle Wortabdeckung: 95%
+
+Seite 13: fehlende Zahlen (3): 0, 4, 3
+Seite 14: fehlende Zahlen (3): 80, 0, 9
+Seite 15: fehlende Zahlen (5): 3, 7, 0, 2, 9
+Seite 21: fehlende Zahlen (2): 6, 5
+Seite 26: keine Textebene – automatischer Abgleich nicht möglich, am Seitenbild prüfen

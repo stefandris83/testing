@@ -1,0 +1,7 @@
+# Zeilenenden: im Repository und beim Auschecken immer LF (auch unter Windows).
+# Die Skills laufen in Copilot Studio unter Linux; tools/build.py baut daraus ein ZIP mit festem Inhalt.
+* text=auto eol=lf
+*.zip binary
+*.pdf binary
+*.png binary
+*.jpg binary

@@ -1,0 +1,36 @@
+# Prüft bei jedem Push: abgeleitete Dateien aktuell, alle Tests bestanden, dist/lav-ingest.zip passt zum Quellstand.
+# Lokal dasselbe: python tools/build.py --pruefen
+name: Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pruefen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"   # wie die Sandbox in Copilot Studio
+
+      - name: pdfplumber für Teil B der Ingest-Tests
+        run: pip install "pdfplumber>=0.11,<0.12"
+
+      - name: Test-PDFs aus dem Cache
+        uses: actions/cache@v4
+        with:
+          path: testdaten/pdf
+          key: test-pdfs-${{ hashFiles('tools/pdfs_holen.py') }}
+
+      - name: Test-PDFs holen (falls nicht im Cache; ohne PDFs wird Teil B übersprungen)
+        run: python tools/pdfs_holen.py || echo "Test-PDFs nicht verfügbar – Teil B der Ingest-Tests wird übersprungen"
+
+      - name: Abgeglichen, getestet, ZIP aktuell?
+        run: python tools/build.py --pruefen
